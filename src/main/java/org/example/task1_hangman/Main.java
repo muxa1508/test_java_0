@@ -1,7 +1,7 @@
 package org.example.task1_hangman;
 
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class Main {
             while (count < 6) {
                 System.out.println("_________");
                 securedWord = wordCheck.getMaskedWord();
-                System.out.println(securedWord);
+                System.out.println(securedWord + " Осталось жизней: " + (6-count));
 
                 if (!inputScanner.getInputList().isEmpty()) {
                     System.out.println("Вы ранее вводили следующие буквы:" + '\n' +
