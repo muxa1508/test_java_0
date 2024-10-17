@@ -1,4 +1,4 @@
-package org.example.task2;
+package org.example.task2_converter;
 
 
 import java.util.Scanner;
@@ -10,27 +10,26 @@ public class Main {
         Courses courses = new Courses();
         courses.fillMaps();
         String input;
-        boolean exit = false;
 
-
-        while (!exit) {
+        while (true) {
             System.out.println("Для выхода из программы введите " + '\"' + "выход" + '\"' + '\n' +
                     "Для продолжения нажмите Enter");
 
-            input = inputScanner.input(scanner);
-            if (inputScanner.isExit()) {
-                break;
-            }
+            scanner.nextLine();
 
             System.out.println(courses);
 
             System.out.println("Выберите действие:" + '\n' +
                     "1. Ввести курс валюты" + '\n' +
                     "2. Конвертировать валюту" + '\n');
+
             Menu menu = new Menu(scanner, inputScanner, courses);
+
+            input = inputScanner.input(scanner);
             menu.mainMenu(input);
 
 
         }
+
     }
 }

@@ -1,4 +1,4 @@
-package org.example.task2;
+package org.example.task2_converter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +15,8 @@ public class Courses {
 
     protected Map<CoursesName, Float> courses = new HashMap<>();
     protected Map<Integer, CoursesName> coursesId = new HashMap<>();
+
+
 
     protected void fillMaps() {
         courses.put(CoursesName.RUB, RUB);
@@ -43,11 +45,11 @@ public class Courses {
     }
 
 
-    public Map<CoursesName, Float> getCourses() {
+    protected Map<CoursesName, Float> getCourses() {
         return courses;
     }
 
-    public Map<Integer, CoursesName> getCoursesId() {
+    protected Map<Integer, CoursesName> getCoursesId() {
         return coursesId;
     }
 

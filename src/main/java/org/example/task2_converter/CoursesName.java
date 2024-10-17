@@ -1,4 +1,4 @@
-package org.example.task2;
+package org.example.task2_converter;
 
 
 public enum CoursesName {
