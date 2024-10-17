@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class WordChoice {
+public class WordChoiceFile {
 
     private String DICTIONARY = "src/main/resources/dictionary.txt";
 

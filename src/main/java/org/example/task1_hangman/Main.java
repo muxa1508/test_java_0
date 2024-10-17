@@ -14,14 +14,16 @@ public class Main {
         boolean exit;
         while (true) {
             exit = inputScanner.isExit();
-            WordChoice wordChoice = new WordChoice();
+//            WordChoiceFile wordChoice = new WordChoiceFile();
+            WordChoiceConstant wordChoiceConstant = new WordChoiceConstant();
             WordCheck wordCheck = new WordCheck();
             String securedWord = null;
 
             if (exit) {
                 break;
             }
-            String word = wordChoice.getWord();
+            String word = wordChoiceConstant.getWord();
+//            String word = wordChoice.getWord();
 
 //            System.out.println(word);
             int count = 0;
