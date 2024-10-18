@@ -15,7 +15,7 @@ public class Main {
             System.out.println("Для выхода из программы введите " + '\"' + "выход" + '\"' + '\n' +
                     "Для продолжения нажмите Enter");
 
-            scanner.nextLine();
+            inputScanner.input(scanner);
 
             System.out.println(courses);
 

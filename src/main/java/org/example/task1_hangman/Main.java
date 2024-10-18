@@ -9,19 +9,15 @@ public class Main {
         System.out.println("Для выхода из программы введите " + '\"' + "выход" + '\"' + '\n' +
                 "Для продолжения нажмите Enter");
         Input inputScanner = new Input();
-        String input;
-        input = inputScanner.input(scanner);
-        boolean exit;
+
         while (true) {
-            exit = inputScanner.isExit();
+            inputScanner.input(scanner);
+
 //            WordChoiceFile wordChoice = new WordChoiceFile();
             WordChoiceConstant wordChoiceConstant = new WordChoiceConstant();
             WordCheck wordCheck = new WordCheck();
             String securedWord = null;
 
-            if (exit) {
-                break;
-            }
             String word = wordChoiceConstant.getWord();
 //            String word = wordChoice.getWord();
 
@@ -33,7 +29,7 @@ public class Main {
             while (count < 6) {
                 System.out.println("_________");
                 securedWord = wordCheck.getMaskedWord();
-                System.out.println(securedWord + " Осталось жизней: " + (6-count));
+                System.out.println(securedWord + " Осталось жизней: " + (6 - count));
 
                 if (!inputScanner.getInputList().isEmpty()) {
                     System.out.println("Вы ранее вводили следующие буквы:" + '\n' +
@@ -41,11 +37,8 @@ public class Main {
                 }
 
                 System.out.println("Введите букву");
-                input = inputScanner.input(scanner);
-                exit = inputScanner.isExit();
-                if (exit) {
-                    break;
-                }
+                String input = inputScanner.input(scanner);
+
                 wordCheck.checkWord(securedWord, input);
 
                 count = wordCheck.getCounter();
@@ -59,18 +52,10 @@ public class Main {
                 }
             }
             System.out.println("Игра закончена");
-            if (exit) {
-                break;
-            }
 
             System.out.println("Введите " + '\"' + "выход" + '\"' +
                     " для выхода из программы или нажмите Enter для повторной попытки");
             inputScanner.inputListClear();
-            input = inputScanner.input(scanner);
-            exit = inputScanner.isExit();
-            if (exit) {
-                break;
-            }
         }
     }
 }

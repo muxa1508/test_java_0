@@ -6,18 +6,14 @@ import java.util.Scanner;
 
 public class Input {
 
-    protected boolean exit = false;
-
     protected List<String> inputList = new ArrayList<String>();
 
     protected String input(Scanner scanner) {
         String input = scanner.nextLine();
 
         if (input.equals("выход")) {
-            exit = true;
-            return null;
+            System.exit(0);
         }
-        exit = false;
         if (!input.equals("") & (input.length() == 1)) {
             inputList.add(input);
         }
@@ -27,10 +23,6 @@ public class Input {
 
     protected List<String> getInputList() {
         return inputList;
-    }
-
-    protected boolean isExit() {
-        return exit;
     }
 
     protected void inputListClear() {
